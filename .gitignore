@@ -1,0 +1,25 @@
+# Environment and tools (recreate with `uv sync`)
+.venv/
+.tools/
+.cache/
+
+# Scroll data and model runs: large, and the scroll data is licensed separately (see README)
+data/
+runs/
+*.zarr/
+*.npz
+*.npy
+*.pt
+
+# Executed notebook (embeds scroll images); the .py source is the versioned copy
+notebooks/*.ipynb
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
