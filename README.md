@@ -47,6 +47,27 @@ Scroll data is downloaded on demand from the public
 (git-ignored). Model runs go to `runs/` (git-ignored). Model names used by the analysis scripts are
 defined in [src/ink/registry.py](src/ink/registry.py).
 
+### Pretrained weights
+
+Three trained ink models are attached to the
+[`weights-v1` release](https://github.com/fstrafforello/Vesuvius/releases/tag/weights-v1). To download
+them into `runs/` with checksum verification:
+
+```bash
+uv run python src/ink/download_weights.py
+```
+
+| Name | Architecture | Trained on | Validated on | AUC | F0.5 |
+|---|---|---|---|---|---|
+| `multiscroll` | small 3D front end + 2D U-Net | Scroll 4, PHerc0139, Scroll 1 | PHerc0841 (unseen scroll) | 0.846 | 0.701 |
+| `quick3d` | small 3D front end + 2D U-Net | Scroll 4 | Scroll 4 segment w031 | 0.898 | 0.787 |
+| `full3d` | 3D ResNet-18 encoder | Scroll 4 | Scroll 4 segment w031 | 0.920 | 0.785 |
+
+All take 32 surface-volume layers around the surface at half resolution (level 1, about 4.8 µm px).
+For a new scroll, use `multiscroll`; the Scroll 4 models transfer poorly (see the write-up).
+The weights were trained on Vesuvius Challenge data and are released under **CC BY-NC 4.0**, not the
+MIT license of the code.
+
 ## Repository map
 
 Main pipeline:

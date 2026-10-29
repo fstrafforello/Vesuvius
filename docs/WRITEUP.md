@@ -213,8 +213,12 @@ model finds no ink beyond its false-alarm level. This is **not** evidence that t
 
 ## 7. Reproducing
 
+The trained models are released as `weights-v1` (CC BY-NC 4.0): `multiscroll`, `quick3d`, `full3d`.
+To skip training, download them and go straight to the PHerc0846A steps:
+
 ```bash
 uv sync
+uv run python src/ink/download_weights.py
 
 # Scroll 4 training data (half resolution, labelled areas) and a quick 3D model
 uv run python src/fetch_ink_l1.py

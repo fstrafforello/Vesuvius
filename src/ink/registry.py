@@ -1,8 +1,8 @@
 """Trained ink models, referred to by short name in the analysis scripts.
 
-Weights are not stored in the repository (about 100 MB each, trained on CC BY-NC data). Train them
-with src/ink/train_l1.py (commands in docs/WRITEUP.md) and put each run folder under runs/, or edit
-the folder names below to match your own runs.
+Weights are not stored in the repository (about 100 MB each, trained on CC BY-NC data). Download the
+released ones with src/ink/download_weights.py, or train your own with src/ink/train_l1.py (commands in
+docs/WRITEUP.md) and edit the folder names below to match your runs.
 """
 
 from pathlib import Path
